@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(BMICalculator());
-
 
 class BMICalculator extends StatelessWidget {
   const BMICalculator({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return  MaterialApp(
       home: InputPage(),
     );
   }
@@ -26,14 +24,8 @@ class _InputPageState extends State<InputPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('BMICalculator'),
-      ),
-      body: Center(
+        ),
         child: Text('BodyText'),
-      ),
-
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
       ),
     );
   }
