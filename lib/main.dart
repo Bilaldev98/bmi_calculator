@@ -9,7 +9,7 @@ class BMICalculator extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData.dark().copyWith(primaryColor: Color(0xFFFFFFFF)),
-      home: InputPage(),
+      home: const InputPage(),
     );
   }
 }
@@ -40,26 +40,26 @@ class _InputPageState extends State<InputPage> {
             child: Row(
               children: <Widget>[
                 Expanded(
-                  child: ReusableCard(),
+                  child: ReusableCard(color: Color(0xFF1D1E33)),
                 ),
                 Expanded(
-                  child: ReusableCard(),
+
+                  child: ReusableCard(color: Color(0xFF1D1E33)),
                 ),
               ],
             ),
           ),
           Expanded(
-            child: ReusableCard(),
+            child: ReusableCard(color: Color(0xFF1D1E33)),
           ),
-
           Expanded(
             child: Row(
               children: <Widget>[
                 Expanded(
-                  child: ReusableCard(),
+                  child: ReusableCard(color: Color(0xFF1D1E33)),
                 ),
                 Expanded(
-                  child: ReusableCard(),
+                  child: ReusableCard(color: Color(0xFF1D1E33)),
                 ),
               ],
             ),
@@ -71,16 +71,16 @@ class _InputPageState extends State<InputPage> {
 }
 
 class ReusableCard extends StatelessWidget {
-  const ReusableCard({
-    super.key,
-  });
+  ReusableCard({required this.color});
+
+  final Color color;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.all(15.0),
       decoration: BoxDecoration(
-        color: Color(0xFF1D1E33),
+        color: color,
         borderRadius: BorderRadius.circular(10.0),
       ),
     );
