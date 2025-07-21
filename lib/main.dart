@@ -46,13 +46,31 @@ class _InputPageState extends State<InputPage> {
               children: <Widget>[
                 Expanded(
                   child: ReusableCard(
-                      color: activeCardColor,
+                    color: activeCardColor,
+                    cardChild: Column(
+                      children: <Widget>[
+                        Icon(
+                          FontAwesomeIcons.mars,
+                          size: 80.0,
+                        ),
+                        SizedBox(
+                          height: 15.0,
+                        ),
+                        Text(
+                          'Male',
+                          style: TextStyle(
+                            fontSize: 18.0,
+                            color: Color(0xFF8D8E98),
+                          ),
+                        )
+                      ],
+                    ),
                   ),
                 ),
                 Expanded(
-
                   child: ReusableCard(
-                      color: activeCardColor,
+                    color: activeCardColor,
+                    cardChild: Container(), // Added to fix the error
                   ),
                 ),
               ],
@@ -60,7 +78,8 @@ class _InputPageState extends State<InputPage> {
           ),
           Expanded(
             child: ReusableCard(
-                color: activeCardColor,
+              color: activeCardColor,
+              cardChild: Container(), // Added to fix the error
             ),
           ),
           Expanded(
@@ -68,12 +87,14 @@ class _InputPageState extends State<InputPage> {
               children: <Widget>[
                 Expanded(
                   child: ReusableCard(
-                      color: activeCardColor,
+                    color: activeCardColor,
+                    cardChild: Container(), // Added to fix the error
                   ),
                 ),
                 Expanded(
                   child: ReusableCard(
-                      color: activeCardColor,
+                    color: activeCardColor,
+                    cardChild: Container(), // Added to fix the error
                   ),
                 ),
               ],
@@ -92,7 +113,7 @@ class _InputPageState extends State<InputPage> {
 }
 
 class ReusableCard extends StatelessWidget {
-  ReusableCard({required this.color, this.cardChild});
+  ReusableCard({required this.color, required this.cardChild});
 
   final Color color;
   final Widget cardChild;
@@ -100,7 +121,7 @@ class ReusableCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: cardChildc,
+      child: cardChild,
       margin: EdgeInsets.all(15.0),
       decoration: BoxDecoration(
         color: color,
