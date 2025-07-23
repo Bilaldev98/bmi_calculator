@@ -1,12 +1,10 @@
+import 'package:bmi_calculator/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'icon_content.dart';
 import 'reuseable_card.dart';
 
-const bottomContainerHeight = 80.0;
-const activeCardColor = Color(0xFF1D1E33);
-const bottomContainerColor = Color(0xFFEB1555);
-const inactiveCardColor = Color(0xFF111328);
+
 
 enum Gender{
   male,
@@ -56,6 +54,7 @@ class _InputPageState extends State<InputPage> {
         iconTheme: const IconThemeData(color: Colors.white),
       ),
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
           Expanded(
             child: Row(
@@ -74,11 +73,11 @@ class _InputPageState extends State<InputPage> {
                           selectedGender = Gender.male;
                         });
                       },
-                      color: selectedGender == Gender.male ? activeCardColor : inactiveCardColor,
+                      color: selectedGender == Gender.male ? kActiveCardColor : kInactiveCardColor,
                       cardChild:IconContent(
                         icon: FontAwesomeIcons.mars,
                           label: 'Male',
-                    
+
                       ),
                     ),
                   ),
@@ -97,7 +96,7 @@ class _InputPageState extends State<InputPage> {
                           selectedGender = Gender.female;
                         });
                       },
-                      color: selectedGender == Gender.female ? activeCardColor : inactiveCardColor,
+                      color: selectedGender == Gender.female ? kActiveCardColor : kInactiveCardColor,
                       cardChild: IconContent(
                           icon: FontAwesomeIcons.venus,
                           label: 'Female'
@@ -110,8 +109,20 @@ class _InputPageState extends State<InputPage> {
           ),
           Expanded(
             child: ReusableCard(
-              color: activeCardColor,
-              cardChild: Container(), // Added to fix the error
+              color: kActiveCardColor,
+              cardChild: Column(
+                children: <Widget>[
+                  Text('Height',
+                    style:kLabelTextStyle,
+                  )
+                  Row(
+                    children: <W[],
+                  )
+                ],
+              ),
+              onPress: (){
+
+              },
             ),
           ),
           Expanded(
@@ -119,24 +130,31 @@ class _InputPageState extends State<InputPage> {
               children: <Widget>[
                 Expanded(
                   child: ReusableCard(
-                    color: activeCardColor,
-                    cardChild: Container(), // Added to fix the error
+                    color: kActiveCardColor,
+                    cardChild: Container(),
+
+                    onPress: (){
+
+                    },
                   ),
                 ),
                 Expanded(
                   child: ReusableCard(
-                    color: activeCardColor,
-                    cardChild: Container(), // Added to fix the error
+                    color: kActiveCardColor,
+                    cardChild: Container(),
+                    onPress: (){
+
+                    },
                   ),
                 ),
               ],
             ),
           ),
           Container(
-            color: bottomContainerColor,
+            color: kBottomContainerColor,
             margin: EdgeInsets.only(top: 10.0),
             width: double.infinity,
-            height: bottomContainerHeight,
+            height: kBottomContainerHeight,
           ),
         ],
       ),
