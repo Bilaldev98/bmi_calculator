@@ -37,6 +37,7 @@ class _InputPageState extends State<InputPage> {
 
   Gender ? selectedGender;
   int height = 180;
+  int weight = 40;
 
 
 
@@ -168,10 +169,51 @@ class _InputPageState extends State<InputPage> {
                 Expanded(
                   child: ReusableCard(
                     color: kActiveCardColor,
-                    cardChild: Container(),
+                    cardChild: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children:<Widget> [
+                        Text(
+                            'Weight',
+                          style: kLabelTextStyle,
+                        ),
+                        Text(
+                            weight.toString(),
+                          style: kNumberTextStyle,
+                        ),
 
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            TextButton(
+                              style: TextButton.styleFrom(
+                                  backgroundColor: Color(0xFF4C4F5E),
+                                  shape: CircleBorder(),
+                                  padding: EdgeInsets.all(13)
+                              ),
+                              child: Icon(Icons.add, color: Colors.white, size: 30,),
+                              onPressed: () {  },
+                            ),
+
+                            SizedBox(
+                              width: 10.0,
+                            ),
+
+                            TextButton(
+                              style: TextButton.styleFrom(
+                                  backgroundColor: Color(0xFF4C4F5E),
+                                  shape: CircleBorder(),
+                                  padding: EdgeInsets.all(13)
+                              ),
+                              child: Icon(Icons.add, color: Colors.white, size: 30,),
+                              onPressed: () {  },
+                            ),
+
+                          ],
+                        )
+                      ],
+                    ),
                     onPress: (){
-
                     },
                   ),
                 ),
@@ -180,7 +222,6 @@ class _InputPageState extends State<InputPage> {
                     color: kActiveCardColor,
                     cardChild: Container(),
                     onPress: (){
-
                     },
                   ),
                 ),
