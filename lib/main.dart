@@ -41,6 +41,7 @@ class _InputPageState extends State<InputPage> {
 
 
 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -112,10 +113,10 @@ class _InputPageState extends State<InputPage> {
               color: kActiveCardColor,
               cardChild: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
-
                 children: <Widget>[
-                  Text('Height',
-                    style:kLabelTextStyle,
+                  Text(
+                    'Height',
+                    style: kLabelTextStyle,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -129,25 +130,27 @@ class _InputPageState extends State<InputPage> {
                       Text(
                         'cm',
                         style: kLabelTextStyle,
-                      )
+                      ),
                     ],
                   ),
-                   Slider(
-                       value: height.toDouble(),
-                     min: 120.0,
-                     max: 220.0,
-                     activeColor: Color(0xFFEB1555),
-                     onChanged: (double newValue){
-                       print(newValue);
-                     },
-                   ),
+                  Slider(
+                    value: height.toDouble(),
+                    min: 120.0,
+                    max: 220.0,
+                    activeColor: Color(0xFFEB1555),
+                    inactiveColor: Color(0xFF8D8E98),
+                    onChanged: (double newValue) {
+                      setState(() {
+                        height = newValue.round();
+                      });
+                    },
+                  ),
                 ],
               ),
-              onPress: (){
-
-              },
+              onPress: () {},
             ),
           ),
+
           Expanded(
             child: Row(
               children: <Widget>[
