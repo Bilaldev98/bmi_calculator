@@ -194,11 +194,9 @@ class _InputPageState extends State<InputPage> {
                               child: Icon(Icons.add, color: Colors.white, size: 30,),
                               onPressed: () {  },
                             ),
-
                             SizedBox(
                               width: 10.0,
                             ),
-
                             TextButton(
                               style: TextButton.styleFrom(
                                   backgroundColor: Color(0xFF4C4F5E),
