@@ -185,15 +185,7 @@ class _InputPageState extends State<InputPage> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
-                            TextButton(
-                              style: TextButton.styleFrom(
-                                  backgroundColor: Color(0xFF4C4F5E),
-                                  shape: CircleBorder(),
-                                  padding: EdgeInsets.all(13)
-                              ),
-                              child: Icon(Icons.add, color: Colors.white, size: 30,),
-                              onPressed: () {  },
-                            ),
+                            RoundIconButton(),
                             SizedBox(
                               width: 10.0,
                             ),
@@ -203,10 +195,9 @@ class _InputPageState extends State<InputPage> {
                                   shape: CircleBorder(),
                                   padding: EdgeInsets.all(13)
                               ),
-                              child: Icon(Icons.add, color: Colors.white, size: 30,),
+                               child: Icon(Icons.add, color: Colors.white, size: 30,),
                               onPressed: () {  },
                             ),
-
                           ],
                         )
                       ],
@@ -238,5 +229,25 @@ class _InputPageState extends State<InputPage> {
   }
 }
 
+
+class RoundIconButton extends StatelessWidget {
+  const RoundIconButton({super.key, required this.child});
+
+  final Widget child;
+  @override
+  Widget build(BuildContext context) {
+    return RawMaterialButton(
+      elevation: 6.0,
+      shape: CircleBorder(),
+      fillColor: Color(0xFF4C4F5E),
+      constraints: BoxConstraints.tightFor(
+        width: 56.0,
+        height: 56.0,
+      ),
+      onPressed: () {  },
+      child : child,
+    );
+  }
+}
 
 
