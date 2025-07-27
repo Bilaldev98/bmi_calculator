@@ -29,7 +29,7 @@ class ResultsPage extends StatelessWidget {
               padding: const EdgeInsets.all(15),
               alignment: Alignment.bottomLeft,
               child: const Text(
-                'Your Result!',
+                'Your Results!',
                 style: kTitleTextStyle,
               ),
             ),
