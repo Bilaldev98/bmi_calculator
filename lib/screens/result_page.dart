@@ -1,35 +1,36 @@
-import 'package:bmi_calculator/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:bmi_calculator/constants.dart';
 import '../components/reuseable_card.dart';
-import '../components/bottom_button.dart';
+import 'package:bmi_calculator/components/bottom_button.dart';
 
 class ResultsPage extends StatelessWidget {
   const ResultsPage({
-    super.key,
+    required this.interpretation,
     required this.bmiResult,
     required this.resultText,
-    required this.interpretation,
+    super.key,
   });
 
   final String bmiResult;
   final String resultText;
   final String interpretation;
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('BMI CALCULATOR')),
+      appBar: AppBar(
+        title: const Text('BMI CALCULATOR'),
+      ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
           Expanded(
             child: Container(
-              padding: const EdgeInsets.all(15),
+              padding: const EdgeInsets.all(15.0),
               alignment: Alignment.bottomLeft,
               child: const Text(
-                'Your Result!',
+                'Your Result',
                 style: kTitleTextStyle,
               ),
             ),
@@ -37,7 +38,7 @@ class ResultsPage extends StatelessWidget {
           Expanded(
             flex: 5,
             child: ReusableCard(
-              color: kActiveCardColor,
+              colour: kActiveCardColor,
               cardChild: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -55,19 +56,15 @@ class ResultsPage extends StatelessWidget {
                     textAlign: TextAlign.center,
                     style: kBodyTextStyle,
                   ),
-
-
                 ],
-
               ),
-              onPress: () {}, // Even if unused, required due to non-nullable
             ),
           ),
           BottomButton(
+            buttonTitle: 'RE-CALCULATE',
             onTap: () {
               Navigator.pop(context);
             },
-            buttonTitle: 'Re-Calculate',
           )
         ],
       ),
