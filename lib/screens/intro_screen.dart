@@ -26,7 +26,7 @@ class IntroScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Icon(Icons.monitor_weight, size: 120, color: Colors.pinkAccent),
-              const SizedBox(height: 20),
+              const SizedBox(height: 10),
               const Text(
                 "Welcome to BMI Calculator",
                 style: TextStyle(
